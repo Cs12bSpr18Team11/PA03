@@ -2,10 +2,10 @@ package pa03;
 import java.awt.Color;
 
 public class AlexCircle extends CircleShape {
-	
+	private double spdFactor = 10;
 	public AlexCircle() {
 		super();
-		this.color = new Color(0,0,0);
+		this.color = new Color(0,100,255);
 	}
 	
 	public static void main(String[] args) {
@@ -15,4 +15,27 @@ public class AlexCircle extends CircleShape {
 	public String toString() {
 		return "AlexCircle: " + super.toString();
 	}
+	
+	/**
+	 * I want to make the circles vary in speeds depending on which side it hits
+	 */
+	
+	  public void keepOnBoard(){
+		    if (this.x < this.radius) {
+		      this.vx = spdFactor*this.vx;
+
+		    }else if (this.x > CircleShape.boardWidth-this.radius) {
+		      this.vx = this.vx/spdFactor;
+		   
+		    }
+
+		    if (this.y < this.radius){		  
+		      this.vy = spdFactor*this.vy;
+
+		    } else if (this.y > CircleShape.boardHeight-this.radius) {
+		      this.vy = this.vy/spdFactor;
+		     
+		    }
+		    super.keepOnBoard();
+		  }
 }
