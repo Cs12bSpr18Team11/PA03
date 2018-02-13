@@ -17,10 +17,10 @@ public class QiCircle extends CircleShape{
 
     this.color = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
     if(rand.nextInt(1) == 0){
-      this.borderColor = Color.WHITE;
+      this.borderColor = Color.white;
       this.speed = rand.nextInt(10);
     } else {
-      this.borderColor = Color.BLACK;
+      this.borderColor = Color.black;
       this.speed = rand.nextInt(0) + 1;
     }
   }
